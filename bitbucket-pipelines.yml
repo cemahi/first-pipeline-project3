@@ -9,13 +9,13 @@ image: gradle:6.6.0
 
 pipelines:
   default:
-#      - step:
-#          name: Message to Slack
-#          script:
-#          - pipe: atlassian/slack-notify:1.1.0
-#            variables:
-#              WEBHOOK_URL: https://hooks.slack.com/services/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
-#              MESSAGE: 'Hello, world!'
+      - step:
+          name: Message to Slack
+          script:
+          - pipe: atlassian/slack-notify:1.1.0
+            variables:
+              WEBHOOK_URL: https://hooks.slack.com/services/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
+              MESSAGE: 'Hello, world!'
 #      - step:
 #          name: Build and Test
 #          caches:
@@ -23,18 +23,18 @@ pipelines:
 #          script:
 #            - ./gradlew clean
 #            - ./gradlew build
-##          after-script:
-##            - pipe: atlassian/checkstyle-report:0.3.0
+#          after-script:
+#            - pipe: atlassian/checkstyle-report:0.3.0
 #      - step:
 #          name: Security Scan
 #          script:
 #            # Run a security scan for sensitive data.
 #            # See more security tools at https://bitbucket.org/product/features/pipelines/integrations?&category=security
 #            - pipe: atlassian/git-secrets-scan:0.5.1
-      - step:
-          name: Sonar Scan
-          script:
-            - pipe: sonarsource/sonarcloud-scan:1.4.0
+#      - step:
+#          name: Sonar Scan
+#          script:
+#            - pipe: sonarsource/sonarcloud-scan:1.4.0
 
 clone:
   depth: full    # SonarCloud scanner needs the full history to assign issues properly
