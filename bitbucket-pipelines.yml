@@ -9,6 +9,13 @@ image: gradle:6.6.0
 
 pipelines:
   default:
+    - step:
+        name: Message to Slack
+        script:
+          - pipe: atlassian/slack-notify:1.1.0
+            variables:
+              WEBHOOK_URL: https://hooks.slack.com/services/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
+              MESSAGE: 'Hello, world!'
       - step:
           name: Build and Test
           caches:
