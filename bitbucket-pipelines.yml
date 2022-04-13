@@ -34,7 +34,7 @@ pipelines:
       - step:
           name: Sonar Scan
           script:
-           - ./gradlew build sonarqube
+            - pipe: sonarsource/sonarcloud-scan:1.4.0
 
 clone:
   depth: full    # SonarCloud scanner needs the full history to assign issues properly
