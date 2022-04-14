@@ -12,7 +12,7 @@ pipelines:
       - step:
           name : Send to GitHub
           script:
-            - git remote add sync https://github.com/cemahi/first-pipeline-project3.git
+            - git remote add sync git@github.com:cemahi/first-pipeline-project3.git
             - git fetch
             - git checkout master
             - git pull    
