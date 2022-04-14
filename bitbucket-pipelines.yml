@@ -13,9 +13,9 @@ pipelines:
           name : Send to GitHub
           script:
             - git remote add sync https://github.com/cemahi/first-pipeline-project.git
-            - git checkout dev
+            - git checkout main
             - git pull    
-            - git push sync dev
+            - git push sync main
       - step:
           name: Message to Slack
           script:
