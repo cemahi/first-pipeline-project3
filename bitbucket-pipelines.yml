@@ -25,6 +25,10 @@ pipelines:
             variables:
               WEBHOOK_URL: $WEBHOOK_URL
               MESSAGE: 'Hello, world!'
+      - step:
+          name: Sonar Scan
+          script:
+          - pipe: ./gradlew build sonarqube
 #      - step:
 #          name: Build and Test
 #          caches:
@@ -40,10 +44,6 @@ pipelines:
 #            # Run a security scan for sensitive data.
 #            # See more security tools at https://bitbucket.org/product/features/pipelines/integrations?&category=security
 #            - pipe: atlassian/git-secrets-scan:0.5.1
-      - step:
-          name: Sonar Scan
-          script:
-            - pipe: ./gradlew build sonarqube
 
 clone:
   depth: full    # SonarCloud scanner needs the full history to assign issues properly
