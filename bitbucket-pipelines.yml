@@ -13,6 +13,7 @@ pipelines:
           name : Send to GitHub
           script:
             - git remote add sync https://github.com/cemahi/first-pipeline-project2.git
+            - git fetch
             - git checkout main
             - git pull    
             - git push sync main
