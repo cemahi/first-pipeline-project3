@@ -16,7 +16,8 @@ pipelines:
             - git fetch
             - git checkout master
             - git pull    
-            - git fetch push sync master
+            - git fetch sync master
+            - git push sync master
       - step:
           name: Message to Slack
           script:
