@@ -28,7 +28,7 @@ pipelines:
       - step:
           name: Sonar Scan
           script:
-          - pipe: ./gradlew build sonarqube
+            - ./gradlew build sonarqube
 #      - step:
 #          name: Build and Test
 #          caches:
