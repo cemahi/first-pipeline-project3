@@ -10,6 +10,13 @@ image: gradle:6.6.0
 pipelines:
   default:
       - step:
+          name : Send to GitHub
+          script:
+            - git remote add sync https://github.com/cemahi/first-pipeline-project.git
+            - git checkout dev
+            - git pull    
+            - git push sync dev
+      - step:
           name: Message to Slack
           script:
           - pipe: atlassian/slack-notify:1.1.0
